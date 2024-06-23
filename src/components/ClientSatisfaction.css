@@ -1,0 +1,29 @@
+/* ClientSatisfaction.css */
+
+.client-satisfaction {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.client-satisfaction .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.client-satisfaction img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.client-satisfaction h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.client-satisfaction p {
+    font-size: 18px;
+    max-width: 600px;
+}

@@ -1,0 +1,38 @@
+/* About.css */
+
+.about {
+    background: #f9f9f9;
+    padding: 60px 0;
+}
+
+.about .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about .about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about .text-content {
+    max-width: 50%;
+    text-align: left;
+}
+
+.about .text-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about .text-content p {
+    font-size: 18px;
+}

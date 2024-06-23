@@ -1,0 +1,29 @@
+/* Team.css */
+
+.team {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.team .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.team h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.team p {
+    font-size: 18px;
+    max-width: 600px;
+}

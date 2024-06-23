@@ -1,0 +1,29 @@
+/* StrategicExpansion.css */
+
+.strategic-expansion {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.strategic-expansion .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.strategic-expansion img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.strategic-expansion h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.strategic-expansion p {
+    font-size: 18px;
+    max-width: 600px;
+}

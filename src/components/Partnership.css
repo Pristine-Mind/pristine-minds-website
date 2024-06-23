@@ -1,0 +1,39 @@
+/* Partnership.css */
+
+.partnership {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.partnership .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partnership img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.partnership h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.partnership p {
+    font-size: 18px;
+    max-width: 600px;
+}
+
+.partnership .btn {
+    display: inline-block;
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 5px;
+}
