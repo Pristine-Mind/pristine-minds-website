@@ -4,7 +4,9 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between h-full">
       <div>
-        <img src={Logo} alt="logo" />
+        <a href="/">
+          <img src={Logo} alt="logo" />
+        </a>
       </div>
       <nav>
         <ul className="flex gap-12 text-lg font-medium">
