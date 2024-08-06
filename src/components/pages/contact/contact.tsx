@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from '@/components/ui/use-toast.ts';
 import { Textarea } from '@/components/ui/textarea.tsx';
+import emailjs from 'emailjs-com';
 
 const FormSchema = z.object({
   fullname: z.string().min(2, {
@@ -31,11 +32,33 @@ const Contact = () => {
     },
   });
 
-  function onSubmit(_data: z.infer<typeof FormSchema>) {
-    toast({
-      title: 'Your message has been sent',
-      description: 'Our team will contact you shortly.',
-    });
+  function onSubmit(data: z.infer<typeof FormSchema>) {
+    try {
+      emailjs.send(
+        'service_z3sx26l',
+        'template_w5bysh8',
+        {
+          fullname: data.fullname,
+          email: data.email,
+          message: data.message,
+        },
+        '42gma15X3fCcZ1vY-'
+      );
+
+      toast({
+        title: 'Your message has been sent',
+        description: 'Our team will contact you shortly.',
+      });
+
+      // Reset form after successful submission
+      form.reset();
+    } catch (error) {
+      toast({
+        title: 'Error sending message',
+        description: 'Please try again later.',
+        variant: 'destructive',
+      });
+    }
   }
 
   return (
