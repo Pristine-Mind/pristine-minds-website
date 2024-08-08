@@ -32,10 +32,14 @@ const Approach = () => {
         </div>
 
         <Dialog>
-          <DialogTrigger>
+          <DialogTrigger asChild>
             <Button size="default">Let's work together</Button>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent
+            className={'lg:max-w-screen-sm '}
+            onEscapeKeyDown={(e) => e.preventDefault()}
+            onInteractOutside={(e) => e.preventDefault()}
+          >
             <CollaborationDialog></CollaborationDialog>
           </DialogContent>
         </Dialog>

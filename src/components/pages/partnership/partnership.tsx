@@ -25,10 +25,14 @@ const Partnership = () => {
         </div>
 
         <Dialog>
-          <DialogTrigger>
-            <Button size="default">Become our Partner</Button>
+          <DialogTrigger asChild>
+            <Button size="default">Become our partner</Button>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent
+            className={'lg:max-w-screen-sm '}
+            onEscapeKeyDown={(e) => e.preventDefault()}
+            onInteractOutside={(e) => e.preventDefault()}
+          >
             <PartnershipDialog></PartnershipDialog>
           </DialogContent>
         </Dialog>

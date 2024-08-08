@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button.tsx';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog.tsx';
+import CollaborationDialog from '@/components/dialogs/collaboration/collaboration.tsx';
 
 const Hero = () => {
   return (
@@ -10,7 +12,18 @@ const Hero = () => {
         Empowering global Innovation: Elite IT staffing, Cutting-edge bootcamps, and Comprehensive web development.
       </p>
       <div className="pl-0.5">
-        <Button>Work with us</Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button size="default">Work with us</Button>
+          </DialogTrigger>
+          <DialogContent
+            className={'lg:max-w-screen-sm '}
+            onEscapeKeyDown={(e) => e.preventDefault()}
+            onInteractOutside={(e) => e.preventDefault()}
+          >
+            <CollaborationDialog></CollaborationDialog>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );

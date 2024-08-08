@@ -58,7 +58,7 @@ const Focus = () => {
           />
           <div className="py-4 px-6 text-start">
             <h3 className="text-[22px] leading-8 font-bold mb-[10px] tracking-tight">Community Empowerment</h3>
-            <p className="text-lg">Empowering communities with tech-driven solutions for growth and livelihoods..</p>
+            <p className="text-lg">Empowering communities with tech-driven solutions for growth and livelihoods.</p>
           </div>
         </div>
       </div>
