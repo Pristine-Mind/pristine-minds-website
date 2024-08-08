@@ -114,7 +114,7 @@ const Contact = () => {
                   <FormItem className="w-[264px]">
                     <FormLabel>Full Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="" {...field} />
+                      <Input placeholder="Full Name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -127,7 +127,7 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel>Email Address</FormLabel>
                     <FormControl>
-                      <Input placeholder="" {...field} />
+                      <Input placeholder="Email Address" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
