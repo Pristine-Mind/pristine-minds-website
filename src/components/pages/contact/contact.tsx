@@ -73,7 +73,7 @@ const Contact = () => {
         <div>
           <div className="flex gap-6 mb-8">
             <div className="w-14 h-14 rounded-full bg-brand-accent-light flex items-center justify-center">
-              <MapPinIcon className="text-brand-accent h-6 w-6"></MapPinIcon>
+              <MailIcon className="text-brand-accent h-6 w-6"></MailIcon>
             </div>
             <div className="flex flex-col gap-2">
               <p className="uppercase opacity-50 text-[15px] font-medium tracking-[0.2em]">Email</p>
@@ -91,7 +91,7 @@ const Contact = () => {
           </div>
           <div className="flex gap-6 mb-8">
             <div className="w-14 h-14 rounded-full bg-brand-accent-light flex items-center justify-center">
-              <MailIcon className="text-brand-accent h-6 w-6"></MailIcon>
+              <MapPinIcon className="text-brand-accent h-6 w-6"></MapPinIcon>
             </div>
             <div className="flex flex-col gap-2">
               <p className="uppercase opacity-50 text-[15px] font-medium tracking-[0.2em]">Address</p>
