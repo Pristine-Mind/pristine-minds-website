@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea.tsx';
 import { toast } from '@/components/ui/use-toast.ts';
 import { ScrollArea } from '@/components/ui/scroll-area.tsx';
+import emailjs from 'emailjs-com';
 import React from 'react';
 
 const FormSchema = z.object({
@@ -66,14 +67,39 @@ const PartnershipDialog = () => {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: 'You submitted the following values:',
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
+    try {
+      emailjs.send(
+        'service_z3sx26l',
+        'template_sl5n9rj',
+        {
+          fullname: data.companyName,
+          email: data.email,
+          phone: data.phone,
+          website: data.website,
+          // serviceType: data.serviceType,
+          // projectDescription: data.projectDescription,
+          // references: data.references,
+          queries: data.queries,
+        },
+        '42gma15X3fCcZ1vY-'
+      );
+
+      toast({
+        title: 'Your message has been sent',
+        description: 'Our team will contact you shortly.',
+      });
+
+      partnershipForm.reset();
+    } catch (error) {
+      toast({
+        title: 'You submitted the following values:',
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+          </pre>
+        ),
+      });
+    }
   }
 
   return (
