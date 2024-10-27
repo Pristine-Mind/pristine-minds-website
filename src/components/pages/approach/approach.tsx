@@ -17,15 +17,15 @@ const Approach = () => {
           </div>
           <ul className="my-[22px]">
             <li className="flex gap-2 mb-3">
-              <img src="src/assets/bullet.svg" alt="bullet icon" />
+              <img src="/src/assets/bullet.svg" alt="bullet icon" />
               <span className="text-[1.125rem]">Transparent Communication</span>
             </li>
             <li className="flex gap-2 mb-3">
-              <img src="src/assets/bullet.svg" alt="bullet icon" />
+              <img src="/src/assets/bullet.svg" alt="bullet icon" />
               <span className="text-[1.125rem]">Collaborative Spirit</span>
             </li>
             <li className="flex gap-2 mb-3">
-              <img src="src/assets/bullet.svg" alt="bullet icon" />
+              <img src="/src/assets/bullet.svg" alt="bullet icon" />
               <span className="text-[1.125rem]">Client Satisfaction</span>
             </li>
           </ul>
@@ -45,7 +45,7 @@ const Approach = () => {
         </Dialog>
       </div>
       <div>
-        <img src="src/assets/approach.png" alt="our approach" height="480" width="510"></img>
+        <img src="/src/assets/approach.png" alt="our approach" height="480" width="510"></img>
       </div>
     </div>
   );

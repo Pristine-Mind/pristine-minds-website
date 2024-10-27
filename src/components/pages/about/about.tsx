@@ -4,7 +4,7 @@ const About = () => {
       <div className="flex flex-col items-start">
         <div className="uppercase mb-2 text-sm tracking-wide font-medium text-brand-blue opacity-80">About Us</div>
         <div className="text-5xl font-bold text-left">Empowering all large and small businesses.</div>
-        <div className="bg-[url('src/assets/about-hero.png')] h-[500px] w-[500px] bg-contain bg-no-repeat mt-8"></div>
+        <div className="bg-[url('/src/assets/about-hero.png')] h-[500px] w-[500px] bg-contain bg-no-repeat mt-8"></div>
       </div>
       <div className="flex flex-col text-left">
         <blockquote className="mb-12 border-s-2 pl-[1.75rem] border-primary text-[1.375rem] leading-10">

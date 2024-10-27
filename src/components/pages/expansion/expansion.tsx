@@ -15,7 +15,7 @@ const Expansion = () => {
       <div className="grid grid-cols-2 mt-7">
         <div className="text-start max-w-[539px]">
           <div className="flex gap-[22px] items-center mb-5 p-6">
-            <img src="src/assets/icons/expansion.svg" alt="expansion icon" className="w-12 h-12" />
+            <img src="/src/assets/icons/expansion.svg" alt="expansion icon" className="w-12 h-12" />
             <div className="flex flex-col">
               <p className="font-bold text-[18px] mb-2">Enhanced Capabilities</p>
               <p className="text-base text-slate-800">
@@ -25,7 +25,7 @@ const Expansion = () => {
             </div>
           </div>
           <div className="flex gap-[22px] items-center mb-5 p-6">
-            <img src="src/assets/icons/efficiency.svg" alt="efficiency icon" className="w-12 h-12" />
+            <img src="/src/assets/icons/efficiency.svg" alt="efficiency icon" className="w-12 h-12" />
             <div className="flex flex-col">
               <p className="font-bold text-[18px] mb-2">Cost Efficiency</p>
               <p className="text-base text-slate-800">
@@ -36,7 +36,7 @@ const Expansion = () => {
             </div>
           </div>
           <div className="flex gap-[22px] items-center p-6">
-            <img src="src/assets/icons/cdevelopment.svg" alt="continuous development icon" className="w-12 h-12" />
+            <img src="/src/assets/icons/cdevelopment.svg" alt="continuous development icon" className="w-12 h-12" />
             <div className="flex flex-col">
               <p className="font-bold text-[18px] mb-2">Continuous Development</p>
               <p className="text-base text-slate-800">
@@ -47,7 +47,11 @@ const Expansion = () => {
           </div>
         </div>
         <div className="flex justify-end">
-          <img src="src/assets/expansion.png" alt="expansion" className="w-[487px] h-[505px] object-fill rounded-2xl" />
+          <img
+            src="/src/assets/expansion.png"
+            alt="expansion"
+            className="w-[487px] h-[505px] object-fill rounded-2xl"
+          />
         </div>
       </div>
     </div>

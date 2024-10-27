@@ -6,7 +6,7 @@ const Partnership = () => {
   return (
     <div className="flex h-full gap-2">
       <img
-        src="src/assets/partnership.png"
+        src="/src/assets/partnership.png"
         alt="shaking hands"
         className="h-full w-[50%] object-cover object-left-top"
       />

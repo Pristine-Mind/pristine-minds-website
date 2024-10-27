@@ -20,7 +20,7 @@ function App() {
       </div>
 
       <div className="relative h-[662px]" id="hero">
-        <div className="bg-[url('src/assets/hero.png')] h-[662px] w-screen -z-10 absolute left-0"></div>
+        <div className="bg-[url('/src/assets/hero.png')] h-[662px] w-screen -z-10 absolute left-0"></div>
         <div className="mx-auto max-w-[1140px]">
           <Hero></Hero>
         </div>

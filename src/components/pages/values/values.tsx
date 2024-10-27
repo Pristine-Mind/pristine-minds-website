@@ -45,7 +45,7 @@ const Values = () => {
           At Pristine Minds Nepal, We focus on our core values to ensure that we deliver reliable IT services tailored
           to our client’s needs.
         </blockquote>
-        <img src="src/assets/values.jpg" alt="values" className="w-[549px] h-[356px] object-fill rounded-2xl" />
+        <img src="/src/assets/values.jpg" alt="values" className="w-[549px] h-[356px] object-fill rounded-2xl" />
       </div>
     </div>
   );

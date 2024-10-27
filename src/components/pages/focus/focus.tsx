@@ -17,7 +17,7 @@ const Focus = () => {
       <div className="grid grid-cols-2 gap-x-5 gap-y-8">
         <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
           <img
-            src="src/assets/focus/technological-advancements.png"
+            src="/src/assets/focus/technological-advancements.png"
             alt="technological advancements"
             className="h-full w-auto object-contain shadow-sm"
           />
@@ -28,7 +28,7 @@ const Focus = () => {
         </div>
         <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
           <img
-            src="src/assets/focus/educational-initiatives.png"
+            src="/src/assets/focus/educational-initiatives.png"
             alt="educational initiatives"
             className="h-full w-auto object-contain shadow-sm"
           />
@@ -41,7 +41,7 @@ const Focus = () => {
         </div>
         <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
           <img
-            src="src/assets/focus/environmental-sustainability.png"
+            src="/src/assets/focus/environmental-sustainability.png"
             alt="environmental sustainability"
             className="h-full w-auto object-contain shadow-sm"
           />
@@ -52,7 +52,7 @@ const Focus = () => {
         </div>
         <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
           <img
-            src="src/assets/focus/community-empowerment.png"
+            src="/src/assets/focus/community-empowerment.png"
             alt="community empowerment"
             className="h-full w-auto object-contain shadow-sm"
           />
