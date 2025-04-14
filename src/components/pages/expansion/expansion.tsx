@@ -1,6 +1,7 @@
 import ExpansionImgae from '/src/assets/icons/expansion.svg';
 import EffifiencyImgae from '/src/assets/icons/efficiency.svg';
 import CDevelopment from '/src/assets/icons/cdevelopment.svg';
+import ExpansionB from '/src/assets/expansion.png';
 
 const Expansion = () => {
   return (
@@ -51,11 +52,7 @@ const Expansion = () => {
           </div>
         </div>
         <div className="flex justify-end">
-          <img
-            src="/src/assets/expansion.png"
-            alt="expansion"
-            className="w-[487px] h-[505px] object-fill rounded-2xl"
-          />
+          <img src={ExpansionB} alt="expansion" className="w-[487px] h-[505px] object-fill rounded-2xl" />
         </div>
       </div>
     </div>
