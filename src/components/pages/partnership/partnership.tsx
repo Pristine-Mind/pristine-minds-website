@@ -1,15 +1,12 @@
 import { Button } from '@/components/ui/button.tsx';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog.tsx';
 import PartnershipDialog from '@/components/dialogs/partnership/partnership.tsx';
+import PartnerImage from '/src/assets/partnership.png';
 
 const Partnership = () => {
   return (
     <div className="flex h-full gap-2">
-      <img
-        src="/src/assets/partnership.png"
-        alt="shaking hands"
-        className="h-full w-[50%] object-cover object-left-top"
-      />
+      <img src={PartnerImage} alt="shaking hands" className="h-full w-[50%] object-cover object-left-top" />
       <div className="text-white px-[67px] py-[100px] text-start">
         <div className="uppercase mb-2 text-sm tracking-widest font-medium text-white opacity-80">
           Notable Partnership

@@ -1,6 +1,8 @@
-import { Button } from '@/components/ui/button.tsx';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog.tsx';
-import CollaborationDialog from '@/components/dialogs/collaboration/collaboration.tsx';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import CollaborationDialog from '@/components/dialogs/collaboration/collaboration';
+import Bullet from '/src/assets/bullet.svg';
+import ApproachImage from '/src/assets/approach.png';
 
 const Approach = () => {
   return (
@@ -17,15 +19,15 @@ const Approach = () => {
           </div>
           <ul className="my-[22px]">
             <li className="flex gap-2 mb-3">
-              <img src="/src/assets/bullet.svg" alt="bullet icon" />
+              <img src={Bullet} alt="bullet icon" />
               <span className="text-[1.125rem]">Transparent Communication</span>
             </li>
             <li className="flex gap-2 mb-3">
-              <img src="/src/assets/bullet.svg" alt="bullet icon" />
+              <img src={Bullet} alt="bullet icon" />
               <span className="text-[1.125rem]">Collaborative Spirit</span>
             </li>
             <li className="flex gap-2 mb-3">
-              <img src="/src/assets/bullet.svg" alt="bullet icon" />
+              <img src={Bullet} alt="bullet icon" />
               <span className="text-[1.125rem]">Client Satisfaction</span>
             </li>
           </ul>
@@ -36,16 +38,16 @@ const Approach = () => {
             <Button size="default">Let's work together</Button>
           </DialogTrigger>
           <DialogContent
-            className={'lg:max-w-screen-sm '}
+            className={'lg:max-w-screen-sm'}
             onEscapeKeyDown={(e) => e.preventDefault()}
             onInteractOutside={(e) => e.preventDefault()}
           >
-            <CollaborationDialog></CollaborationDialog>
+            <CollaborationDialog />
           </DialogContent>
         </Dialog>
       </div>
       <div>
-        <img src="/src/assets/approach.png" alt="our approach" height="480" width="510"></img>
+        <img src={ApproachImage} alt="our approach" height="480" width="510" />
       </div>
     </div>
   );

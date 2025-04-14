@@ -1,3 +1,8 @@
+import Advancement from '/src/assets/focus/technological-advancements.png';
+import EducationalIntiative from '/src/assets/focus/educational-initiatives.png';
+import Sustainability from '/src/assets/focus/environmental-sustainability.png';
+import Environment from '/src/assets/focus/community-empowerment.png';
+
 const Focus = () => {
   return (
     <div>
@@ -16,11 +21,7 @@ const Focus = () => {
 
       <div className="grid grid-cols-2 gap-x-5 gap-y-8">
         <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
-          <img
-            src="/src/assets/focus/technological-advancements.png"
-            alt="technological advancements"
-            className="h-full w-auto object-contain shadow-sm"
-          />
+          <img src={Advancement} alt="technological advancements" className="h-full w-auto object-contain shadow-sm" />
           <div className="py-4 px-6 text-start">
             <h3 className="text-[22px] leading-8 font-bold mb-[10px] tracking-tight">Technological Advancements</h3>
             <p className="text-lg">Implementing cutting-edge technology to solve real-world problems.</p>
@@ -28,7 +29,7 @@ const Focus = () => {
         </div>
         <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
           <img
-            src="/src/assets/focus/educational-initiatives.png"
+            src={EducationalIntiative}
             alt="educational initiatives"
             className="h-full w-auto object-contain shadow-sm"
           />
@@ -41,7 +42,7 @@ const Focus = () => {
         </div>
         <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
           <img
-            src="/src/assets/focus/environmental-sustainability.png"
+            src={Sustainability}
             alt="environmental sustainability"
             className="h-full w-auto object-contain shadow-sm"
           />
@@ -51,11 +52,7 @@ const Focus = () => {
           </div>
         </div>
         <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
-          <img
-            src="/src/assets/focus/community-empowerment.png"
-            alt="community empowerment"
-            className="h-full w-auto object-contain shadow-sm"
-          />
+          <img src={Environment} alt="community empowerment" className="h-full w-auto object-contain shadow-sm" />
           <div className="py-4 px-6 text-start">
             <h3 className="text-[22px] leading-8 font-bold mb-[10px] tracking-tight">Community Empowerment</h3>
             <p className="text-lg">Empowering communities with tech-driven solutions for growth and livelihoods.</p>
