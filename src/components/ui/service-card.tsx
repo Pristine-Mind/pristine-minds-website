@@ -1,40 +1,34 @@
 import React from 'react';
 
-import icon1 from '../../assets/icons/blockchain.svg';
-import icon3 from '../../assets/icons/cloud.svg';
-import icon4 from '../../assets/icons/consulting.svg';
-import icon5 from '../../assets/icons/development.svg';
-import icon7 from '../../assets/icons/elearning.svg';
-import icon8 from '../../assets/icons/training.svg';
+import iconBlockchain from '@/assets/icons/blockchain.svg';
+import iconCloud from '@/assets/icons/cloud.svg';
+import iconConsulting from '@/assets/icons/consulting.svg';
+import iconDevelopment from '@/assets/icons/development.svg';
+import iconElearning from '@/assets/icons/elearning.svg';
+import iconTraining from '@/assets/icons/training.svg';
 
 const iconMap: Record<string, string> = {
-  development: icon5,
-  training: icon8,
-  cloud: icon3,
-  blockchain: icon1,
-  elearning: icon7,
-  consulting: icon4,
+  development: iconDevelopment,
+  training: iconTraining,
+  cloud: iconCloud,
+  blockchain: iconBlockchain,
+  elearning: iconElearning,
+  consulting: iconConsulting,
 };
 
 interface Props {
-  image: string;
+  image: keyof typeof iconMap;
   alt: string;
   title: string;
   description: string;
 }
 
-const ServiceCard: React.FC<Props> = ({ image, alt, title, description }) => {
-  const imageSrc = iconMap[image];
-
-  return (
-    <div className="bg-white p-8 flex flex-col h-[304px] w-[360px] items-start text-start rounded-2xl">
-      <img src={imageSrc} alt={alt} className="w-[3.25rem] h-[3.25rem] pb-5"></img>
-      <div>
-        <p className="font-bold text-[1.25rem] mb-[12px]">{title}</p>
-        <p className="text-[1.125rem]">{description}</p>
-      </div>
-    </div>
-  );
-};
+const ServiceCard: React.FC<Props> = ({ image, alt, title, description }) => (
+  <div className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm transition hover:shadow-lg">
+    <img src={iconMap[image]} alt={alt} className="mb-4 h-12 w-12 shrink-0 object-contain" />
+    <h4 className="mb-2 text-lg font-bold leading-snug md:text-xl">{title}</h4>
+    <p className="text-sm leading-6 text-gray-700 md:text-base">{description}</p>
+  </div>
+);
 
 export default ServiceCard;

@@ -1,86 +1,90 @@
 import './App.css';
-import Hero from '@/components/pages/hero/hero.tsx';
-import Header from '@/components/layout/header.tsx';
-import About from '@/components/pages/about/about.tsx';
-import Services from '@/components/pages/services/services.tsx';
-import Approach from '@/components/pages/approach/approach.tsx';
-import Values from '@/components/pages/values/values.tsx';
-import Expansion from '@/components/pages/expansion/expansion.tsx';
-import Focus from '@/components/pages/focus/focus.tsx';
-import Partnership from '@/components/pages/partnership/partnership.tsx';
-import Contact from '@/components/pages/contact/contact.tsx';
-import Footer from '@/components/layout/footer.tsx';
-import { Toaster } from '@/components/ui/toaster.tsx';
+import Hero from '@/components/pages/hero/hero';
+import Header from '@/components/layout/header';
+import About from '@/components/pages/about/about';
+import Services from '@/components/pages/services/services';
+import Approach from '@/components/pages/approach/approach';
+import Values from '@/components/pages/values/values';
+import Expansion from '@/components/pages/expansion/expansion';
+import Focus from '@/components/pages/focus/focus';
+import Partnership from '@/components/pages/partnership/partnership';
+import Contact from '@/components/pages/contact/contact';
+import Footer from '@/components/layout/footer';
+import { Toaster } from '@/components/ui/toaster';
+import hero from '/src/assets/hero.png';
 
-function App() {
+function Section({ id, bg = '', children }: React.PropsWithChildren<{ id: string; bg?: string }>) {
   return (
-    <div className="flex flex-col">
-      <div className="h-[97px] mx-auto w-[1140px]">
-        <Header></Header>
-      </div>
+    <section id={id} className={`${bg} w-full`}>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">{children}</div>
+    </section>
+  );
+}
 
-      <div className="relative h-[662px]" id="hero">
-        <div className="bg-[url('/src/assets/hero.png')] h-[662px] w-screen -z-10 absolute left-0"></div>
-        <div className="mx-auto max-w-[1140px]">
-          <Hero></Hero>
+export default function App() {
+  return (
+    <div className="flex min-h-screen flex-col font-sans text-gray-900 antialiased">
+      <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur">
+        <div className="container mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+          <Header />
         </div>
-      </div>
+      </header>
 
-      <div className="bg-white" id="about">
-        <div className="w-[1440px] mx-auto p-[8.5rem]">
-          <About></About>
+      <section id="hero" className="relative isolate">
+        <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden">
+          <img src={hero} alt="Background" className="h-full w-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/80" />
         </div>
-      </div>
 
-      <div className="h-[1120px] bg-blue-50" id="services">
-        <div className="w-[1440px] mx-auto p-[8.5rem]">
-          <Services></Services>
+        <div className="container mx-auto flex min-h-[60vh] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+          <Hero />
         </div>
-      </div>
+      </section>
 
-      <div className="h-[752px] bg-white" id="approach">
-        <div className="w-[1440px] mx-auto p-[8.5rem]">
-          <Approach></Approach>
+      <Section id="about" bg="bg-white">
+        <About />
+      </Section>
+
+      <Section id="services" bg="bg-blue-50">
+        <Services />
+      </Section>
+
+      <Section id="approach" bg="bg-white">
+        <Approach />
+      </Section>
+
+      <Section id="values" bg="bg-blue-50">
+        <Values />
+      </Section>
+
+      <Section id="expansion" bg="bg-white">
+        <Expansion />
+      </Section>
+
+      <Section id="focus" bg="bg-blue-50">
+        <Focus />
+      </Section>
+
+      {/* Partnership banner */}
+      <section id="partnership" className="bg-brand-blue">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <Partnership />
         </div>
-      </div>
+      </section>
 
-      <div className="h-[882px] bg-blue-50" id="values">
-        <div className="w-[1440px] mx-auto p-[8.5rem]">
-          <Values></Values>
+      {/* Contact */}
+      <Section id="contact" bg="bg-white">
+        <Contact />
+      </Section>
+
+      {/* Footer */}
+      <footer className="bg-brand-blue text-white">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+          <Footer />
         </div>
-      </div>
-
-      <div className="bg-white" id="expansion">
-        <div className="w-[1440px] mx-auto p-[8.5rem]">
-          <Expansion></Expansion>
-        </div>
-      </div>
-
-      <div className="relative h-[792px] bg-blue-50" id="focus">
-        <div className="w-[1440px] mx-auto p-[8.5rem]">
-          <Focus></Focus>
-        </div>
-      </div>
-
-      <div className="relative h-[544px] bg-brand-blue" id="partnership">
-        <Partnership></Partnership>
-      </div>
-
-      <div className="bg-white" id="contact">
-        <div className="w-[1440px] mx-auto p-[8.5rem]">
-          <Contact></Contact>
-        </div>
-      </div>
-
-      <div className="bg-brand-blue">
-        <div className="w-[1440px] mx-auto">
-          <Footer></Footer>
-        </div>
-      </div>
+      </footer>
 
       <Toaster />
     </div>
   );
 }
-
-export default App;
