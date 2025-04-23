@@ -1,66 +1,64 @@
-import Advancement from '/src/assets/focus/technological-advancements.png';
-import EducationalIntiative from '/src/assets/focus/educational-initiatives.png';
-import Sustainability from '/src/assets/focus/environmental-sustainability.png';
-import Environment from '/src/assets/focus/community-empowerment.png';
+import Advancement from '@/assets/focus/technological-advancements.png';
+import EducationalInitiative from '@/assets/focus/educational-initiatives.png';
+import Sustainability from '@/assets/focus/environmental-sustainability.png';
+import Community from '@/assets/focus/community-empowerment.png';
 
-const Focus = () => {
+const cards = [
+  {
+    img: Advancement,
+    alt: 'technological advancements',
+    title: 'Technological Advancements',
+    body: 'Implementing cutting-edge technology to solve real‑world problems.',
+  },
+  {
+    img: EducationalInitiative,
+    alt: 'educational initiatives',
+    title: 'Educational Initiatives',
+    body: 'Providing training programs and boot camps to equip individuals with the latest tech skills.',
+  },
+  {
+    img: Sustainability,
+    alt: 'environmental sustainability',
+    title: 'Environmental Sustainability',
+    body: 'Partnering with organizations like Dimitra to enhance agricultural practices.',
+  },
+  {
+    img: Community,
+    alt: 'community empowerment',
+    title: 'Community Empowerment',
+    body: 'Empowering communities with tech‑driven solutions for growth and livelihoods.',
+  },
+];
+
+export default function Focus() {
   return (
-    <div>
-      <div className="flex flex-col text-left">
-        <div className="uppercase mb-2 text-sm tracking-wide font-medium text-brand-blue opacity-80">
+    <section className="space-y-10">
+      <div className="space-y-4 text-left">
+        <span className="text-xs font-semibold uppercase tracking-wide text-brand-blue/80 sm:text-sm">
           What We Aspire For
-        </div>
-        <div className="grid grid-cols-2 gap-[6.5rem]">
-          <div className="text-5xl font-bold text-left">Our Development Focus</div>
-          <blockquote className="mb-12 border-s-2 pl-[1.75rem] border-primary text-xl justify-end">
-            We're deeply involved in socio-economic projects driving sustainable growth. Our scope goes far,
+        </span>
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-16">
+          <h2 className="text-2xl font-extrabold leading-snug xs:text-3xl sm:text-4xl lg:text-5xl">
+            Our Development Focus
+          </h2>
+          <blockquote className="border-l-4 border-primary pl-5 text-sm leading-6 text-gray-700 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">
+            We're deeply involved in socio‑economic projects driving sustainable growth. Our scope goes far,
             encompassing diverse development projects:
           </blockquote>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-x-5 gap-y-8">
-        <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
-          <img src={Advancement} alt="technological advancements" className="h-full w-auto object-contain shadow-sm" />
-          <div className="py-4 px-6 text-start">
-            <h3 className="text-[22px] leading-8 font-bold mb-[10px] tracking-tight">Technological Advancements</h3>
-            <p className="text-lg">Implementing cutting-edge technology to solve real-world problems.</p>
+      <div className="grid gap-6 sm:grid-cols-2">
+        {cards.map(({ img, alt, title, body }) => (
+          <div key={title} className="flex rounded-xl bg-white shadow-sm transition hover:shadow-lg">
+            <img src={img} alt={alt} className="h-full w-32 shrink-0 rounded-l-xl object-cover sm:w-40" />
+            <div className="flex flex-col justify-center gap-2 p-4 text-left sm:p-6">
+              <h3 className="text-base font-bold leading-snug sm:text-lg md:text-xl">{title}</h3>
+              <p className="text-sm leading-6 text-gray-700 sm:text-base md:text-lg">{body}</p>
+            </div>
           </div>
-        </div>
-        <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
-          <img
-            src={EducationalIntiative}
-            alt="educational initiatives"
-            className="h-full w-auto object-contain shadow-sm"
-          />
-          <div className="py-4 px-6 text-start">
-            <h3 className="text-[22px] leading-8 font-bold mb-[10px] tracking-tight">Educational Initiatives</h3>
-            <p className="text-lg">
-              Providing training programs and boot camps to equip individuals with the latest tech skills.
-            </p>
-          </div>
-        </div>
-        <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
-          <img
-            src={Sustainability}
-            alt="environmental sustainability"
-            className="h-full w-auto object-contain shadow-sm"
-          />
-          <div className="py-4 px-6 text-start">
-            <h3 className="text-[22px] leading-8 font-bold mb-[10px] tracking-tight">Environmental Sustainability</h3>
-            <p className="text-lg">Partnering with organizations like Dimitra to enhance agricultural practices.</p>
-          </div>
-        </div>
-        <div className="flex drop-shadow-sm bg-white rounded-s-lg h-[10.75rem]">
-          <img src={Environment} alt="community empowerment" className="h-full w-auto object-contain shadow-sm" />
-          <div className="py-4 px-6 text-start">
-            <h3 className="text-[22px] leading-8 font-bold mb-[10px] tracking-tight">Community Empowerment</h3>
-            <p className="text-lg">Empowering communities with tech-driven solutions for growth and livelihoods.</p>
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Focus;
+}

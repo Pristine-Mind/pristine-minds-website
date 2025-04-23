@@ -1,58 +1,39 @@
 import { MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button.tsx';
-import { Input } from '@/components/ui/input.tsx';
-
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { z } from 'zod';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form.tsx';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { toast } from '@/components/ui/use-toast.ts';
-import { Textarea } from '@/components/ui/textarea.tsx';
+import { toast } from '@/components/ui/use-toast';
+import { Textarea } from '@/components/ui/textarea';
 import emailjs from 'emailjs-com';
 
 const FormSchema = z.object({
-  fullname: z.string().min(2, {
-    message: 'Fullname must be at least 2 characters.',
-  }),
-  email: z.string().email({
-    message: 'Invalid email address.',
-  }),
-  message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
-  }),
+  fullname: z.string().min(2, { message: 'Full name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Invalid email address.' }),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
-const Contact = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
+type FormValues = z.infer<typeof FormSchema>;
+
+export default function Contact() {
+  const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
-    defaultValues: {
-      fullname: '',
-      email: '',
-      message: '',
-    },
+    defaultValues: { fullname: '', email: '', message: '' },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit(data: FormValues) {
     try {
       emailjs.send(
         'service_z3sx26l',
         'template_w5bysh8',
-        {
-          fullname: data.fullname,
-          email: data.email,
-          message: data.message,
-        },
+        { fullname: data.fullname, email: data.email, message: data.message },
         '42gma15X3fCcZ1vY-'
       );
-
-      toast({
-        title: 'Your message has been sent',
-        description: 'Our team will contact you shortly.',
-      });
-
-      // Reset form after successful submission
+      toast({ title: 'Your message has been sent', description: 'Our team will contact you shortly.' });
       form.reset();
-    } catch (error) {
+    } catch {
       toast({
         title: 'Error sending message',
         description: 'Please try again later.',
@@ -61,57 +42,50 @@ const Contact = () => {
     }
   }
 
+  const infoBlocks = [
+    { icon: MailIcon, label: 'Email', value: 'info@pristinemindsnepal.com' },
+    { icon: PhoneIcon, label: 'Contact', value: '+977‑9767474645' },
+    { icon: MapPinIcon, label: 'Address', value: 'Gairidhara‑02, Kathmandu, Nepal' },
+  ];
+
   return (
-    <div className="grid grid-cols-2">
-      <div className="text-start">
-        <div className="mb-12">
-          <div className="uppercase mb-2 text-sm tracking-wide font-medium text-brand-blue opacity-80">
-            Get In Touch
-          </div>
-          <div className="text-5xl font-bold text-left">Contact Us</div>
-        </div>
+    <section className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="space-y-8 text-left">
         <div>
-          <div className="flex gap-6 mb-8">
-            <div className="w-14 h-14 rounded-full bg-brand-accent-light flex items-center justify-center">
-              <MailIcon className="text-brand-accent h-6 w-6"></MailIcon>
+          <span className="text-xs font-medium uppercase tracking-wide text-brand-blue/80 sm:text-sm">
+            Get in touch
+          </span>
+          <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl lg:text-4xl">Contact Us</h2>
+        </div>
+
+        <div className="space-y-8">
+          {infoBlocks.map(({ icon: Icon, label, value }) => (
+            <div key={label} className="flex gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-accent-light">
+                <Icon className="h-6 w-6 text-brand-accent" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-white/60">{label}</p>
+                <p className="mt-1 text-sm sm:text-base">{value}</p>
+              </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <p className="uppercase opacity-50 text-[15px] font-medium tracking-[0.2em]">Email</p>
-              <p className="tracking-wide">info@pristine-minds.com</p>
-            </div>
-          </div>
-          <div className="flex gap-6 mb-8">
-            <div className="w-14 h-14 rounded-full bg-brand-accent-light flex items-center justify-center">
-              <PhoneIcon className="text-brand-accent h-6 w-6"></PhoneIcon>
-            </div>
-            <div className="flex flex-col gap-2">
-              <p className="uppercase opacity-50 text-[15px] font-medium tracking-[0.2em]">Contact</p>
-              <p className="tracking-wide">+977-9767474645</p>
-            </div>
-          </div>
-          <div className="flex gap-6 mb-8">
-            <div className="w-14 h-14 rounded-full bg-brand-accent-light flex items-center justify-center">
-              <MapPinIcon className="text-brand-accent h-6 w-6"></MapPinIcon>
-            </div>
-            <div className="flex flex-col gap-2">
-              <p className="uppercase opacity-50 text-[15px] font-medium tracking-[0.2em]">Address</p>
-              <p className="tracking-wide">Gairidhara-02, Kathmandu, Nepal</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-      <div className="flex flex-col items-start justify-start">
-        <blockquote className="mb-12 border-s-2 pl-[1.75rem] border-primary text-xl text-start">
+
+      <div>
+        <blockquote className="mb-8 border-l-4 border-primary pl-5 text-sm leading-6 text-gray-700 sm:text-base sm:leading-7">
           Explore Pristine Minds Nepal's IT solutions for your business goals. Contact us to learn more.
         </blockquote>
+
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 text-start">
-            <div className="grid grid-cols-2 gap-8 w-full">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <div className="grid gap-6 sm:grid-cols-2">
               <FormField
                 control={form.control}
                 name="fullname"
                 render={({ field }) => (
-                  <FormItem className="w-[264px]">
+                  <FormItem>
                     <FormLabel>Full Name</FormLabel>
                     <FormControl>
                       <Input placeholder="Full Name" {...field} />
@@ -141,18 +115,18 @@ const Contact = () => {
                 <FormItem>
                   <FormLabel>Your message</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Type your message here." {...field} />
+                    <Textarea placeholder="Type your message here…" rows={4} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit">Send Message</Button>
+            <Button type="submit" size="lg">
+              Send Message
+            </Button>
           </form>
         </Form>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Contact;
+}

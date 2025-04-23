@@ -1,32 +1,31 @@
-import { Button } from '@/components/ui/button.tsx';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog.tsx';
-import CollaborationDialog from '@/components/dialogs/collaboration/collaboration.tsx';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import CollaborationDialog from '@/components/dialogs/collaboration/collaboration';
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <div className="flex flex-col items-baseline justify-center text-left h-[662px]">
-      <p className="text-7xl font-black leading-[96px] text-white w-8/12">
-        Empower, Evolve, Innovate, <span className="text-primary">Succeed</span>.
+    <div className="flex w-full max-w-screen-lg flex-col items-start justify-center gap-6 py-10 sm:gap-8 sm:py-16 md:py-20">
+      <p className="text-3xl font-black leading-tight text-white xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+        Empower, Evolve, Innovate,&nbsp;
+        <span className="text-primary">Succeed</span>.
       </p>
-      <p className="text-3xl leading-[46px] mb-[28px] text-white w-8/12">
-        Empowering global Innovation: Elite IT staffing, Cutting-edge bootcamps, and Comprehensive web development.
+
+      <p className="text-base leading-7 text-white xs:text-lg sm:text-xl sm:leading-8 md:text-2xl md:leading-9 lg:text-3xl lg:leading-[46px]">
+        Empowering global innovation: elite IT staffing, cutting-edge bootcamps, and comprehensive web development.
       </p>
-      <div className="pl-0.5">
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button size="default">Work with us</Button>
-          </DialogTrigger>
-          <DialogContent
-            className={'lg:max-w-screen-sm '}
-            onEscapeKeyDown={(e) => e.preventDefault()}
-            onInteractOutside={(e) => e.preventDefault()}
-          >
-            <CollaborationDialog></CollaborationDialog>
-          </DialogContent>
-        </Dialog>
-      </div>
+
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button size="lg">Work with us</Button>
+        </DialogTrigger>
+        <DialogContent
+          className="lg:max-w-screen-sm"
+          onEscapeKeyDown={(e) => e.preventDefault()}
+          onInteractOutside={(e) => e.preventDefault()}
+        >
+          <CollaborationDialog />
+        </DialogContent>
+      </Dialog>
     </div>
   );
-};
-
-export default Hero;
+}

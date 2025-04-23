@@ -1,44 +1,45 @@
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import CollaborationDialog from '@/components/dialogs/collaboration/collaboration';
-import Bullet from '/src/assets/bullet.svg';
-import ApproachImage from '/src/assets/approach.png';
+import Bullet from '@/assets/bullet.svg';
+import ApproachImage from '@/assets/approach.png';
 
-const Approach = () => {
+const bullets = ['Transparent Communication', 'Collaborative Spirit', 'Client Satisfaction'];
+
+export default function Approach() {
   return (
-    <div className="grid grid-cols-2 gap-[69px]">
-      <div className="flex flex-col justify-between items-start">
-        <div className="text-start">
-          <div className="uppercase mb-2 text-sm tracking-wide font-medium text-brand-blue opacity-80">
+    <section className="grid gap-10 md:grid-cols-2 md:gap-16">
+      {/* Copy column */}
+      <div className="flex flex-col justify-between gap-8 md:gap-12">
+        <div className="space-y-4 text-left">
+          <span className="text-xs font-semibold uppercase tracking-wide text-brand-blue/80 sm:text-sm">
             Our Approach
-          </div>
-          <div className="text-5xl font-bold text-left mb-5">Client Satisfaction: Our Priority</div>
-          <div className="text-[1.375rem]">
-            We adopt a client-centric approach, tailoring our services to meet the specific needs and goals of each
+          </span>
+          <h2 className="text-2xl font-extrabold leading-snug xs:text-3xl sm:text-4xl lg:text-5xl">
+            Client Satisfaction: Our Priority
+          </h2>
+          <p className="text-base leading-7 text-gray-700 sm:text-lg sm:leading-8 md:text-xl md:leading-9">
+            We adopt a client‑centric approach, tailoring our services to meet the specific needs and goals of each
             client.
-          </div>
-          <ul className="my-[22px]">
-            <li className="flex gap-2 mb-3">
-              <img src={Bullet} alt="bullet icon" />
-              <span className="text-[1.125rem]">Transparent Communication</span>
-            </li>
-            <li className="flex gap-2 mb-3">
-              <img src={Bullet} alt="bullet icon" />
-              <span className="text-[1.125rem]">Collaborative Spirit</span>
-            </li>
-            <li className="flex gap-2 mb-3">
-              <img src={Bullet} alt="bullet icon" />
-              <span className="text-[1.125rem]">Client Satisfaction</span>
-            </li>
+          </p>
+
+          <ul className="space-y-3 pt-2">
+            {bullets.map((b) => (
+              <li key={b} className="flex items-start gap-2 text-sm sm:text-base md:text-lg">
+                <img src={Bullet} alt="bullet icon" className="mt-1 h-4 w-4 shrink-0" />
+                <span>{b}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* CTA */}
         <Dialog>
           <DialogTrigger asChild>
-            <Button size="default">Let's work together</Button>
+            <Button size="lg">Let's work together</Button>
           </DialogTrigger>
           <DialogContent
-            className={'lg:max-w-screen-sm'}
+            className="lg:max-w-screen-sm"
             onEscapeKeyDown={(e) => e.preventDefault()}
             onInteractOutside={(e) => e.preventDefault()}
           >
@@ -46,11 +47,15 @@ const Approach = () => {
           </DialogContent>
         </Dialog>
       </div>
-      <div>
-        <img src={ApproachImage} alt="our approach" height="480" width="510" />
-      </div>
-    </div>
-  );
-};
 
-export default Approach;
+      {/* Illustration column */}
+      <div className="order-first md:order-none">
+        <img
+          src={ApproachImage}
+          alt="Our approach illustration"
+          className="mx-auto h-64 w-auto object-contain sm:h-80 md:h-[26rem]"
+        />
+      </div>
+    </section>
+  );
+}

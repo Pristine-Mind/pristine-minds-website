@@ -1,57 +1,62 @@
-import ServiceCard from '@/components/ui/service-card.tsx';
+import ServiceCard from '@/components/ui/service-card';
 
-const Services = () => {
+const services = [
+  {
+    image: 'development',
+    alt: 'development icon',
+    title: 'Software Development',
+    description: 'We deliver custom software solutions for efficient business needs.',
+  },
+  {
+    image: 'training',
+    alt: 'training icon',
+    title: 'IT Training & Bootcamps',
+    description: 'Intensive training programs to equip individuals with the latest tech skills.',
+  },
+  {
+    image: 'cloud',
+    alt: 'cloud icon',
+    title: 'Cloud Solutions',
+    description: 'Cloud solutions for efficient business operations.',
+  },
+  {
+    image: 'blockchain',
+    alt: 'blockchain icon',
+    title: 'Blockchain & AI Solutions',
+    description: 'Innovative blockchain and AI solutions for complex business challenges.',
+  },
+  {
+    image: 'elearning',
+    alt: 'elearning icon',
+    title: 'E-Learning Platforms',
+    description: 'We develop e-learning platforms for online education and training.',
+  },
+  {
+    image: 'consulting',
+    alt: 'consulting icon',
+    title: 'Project Management & Consultancy',
+    description: 'We provide expert IT project management and consultancy services.',
+  },
+];
+
+export default function Services() {
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col text-left">
-        <div className="uppercase mb-2 text-sm tracking-wide font-medium text-brand-blue opacity-80">Services</div>
-        <div className="grid grid-cols-2 gap-[6.5rem]">
-          <div className="text-5xl font-bold text-left">Unlocking Potential: Our Service Offerings.</div>
-          <blockquote className="mb-12 border-s-2 pl-[1.75rem] border-primary text-xl">
-            At Pristine Minds, we provide a comprehensive suite of offerings tailored to meet your specific needs.
-          </blockquote>
-        </div>
+    <section>
+      <div className="mb-10 max-w-4xl space-y-4 text-left">
+        <span className="text-xs font-semibold uppercase tracking-wide text-brand-blue/80 sm:text-sm">Services</span>
+        <h2 className="text-2xl font-extrabold leading-snug xs:text-3xl sm:text-4xl">
+          Unlocking Potential: Our Service Offerings.
+        </h2>
+        <blockquote className="border-l-4 border-primary pl-5 text-sm leading-6 text-gray-700 sm:text-base sm:leading-7 md:text-lg md:leading-8">
+          At Pristine Minds, we provide a comprehensive suite of offerings tailored to meet your specific needs.
+        </blockquote>
       </div>
-      <div className="grid grid-cols-3 gap-7 mt-[67px]">
-        <ServiceCard
-          image="development"
-          alt="development icon"
-          title="Software Development"
-          description="We deliver custom software solutions for efficient business needs."
-        ></ServiceCard>
-        <ServiceCard
-          image="training"
-          alt="training icon"
-          title="IT Training & Bootcamps"
-          description="Intensive training programs to equip individuals with the latest tech skills."
-        ></ServiceCard>
-        <ServiceCard
-          image="cloud"
-          alt="cloud icon"
-          title="Cloud Solutions"
-          description="Cloud solutions for efficient business operations."
-        ></ServiceCard>
-        <ServiceCard
-          image="blockchain"
-          alt="blockchain icon"
-          title="Blockchain & AI Solutions"
-          description="Innovative blockchain and AI solutions for complex business challenges."
-        ></ServiceCard>
-        <ServiceCard
-          image="elearning"
-          alt="elearning icon"
-          title="E-Learning Platforms"
-          description="We develop e-learning platforms for online education and training."
-        ></ServiceCard>
-        <ServiceCard
-          image="consulting"
-          alt="consulting icon"
-          title="Project Management & Consultancy"
-          description="We provide expert IT project management and consultancy services."
-        ></ServiceCard>
-      </div>
-    </div>
-  );
-};
 
-export default Services;
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((svc) => (
+          <ServiceCard key={svc.title} {...svc} />
+        ))}
+      </div>
+    </section>
+  );
+}
