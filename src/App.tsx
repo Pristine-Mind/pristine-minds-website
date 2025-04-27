@@ -10,6 +10,7 @@ import Focus from '@/components/pages/focus/focus';
 import Partnership from '@/components/pages/partnership/partnership';
 import Contact from '@/components/pages/contact/contact';
 import Footer from '@/components/layout/footer';
+import { Projects } from './components/pages/projects/projects';
 import { Toaster } from '@/components/ui/toaster';
 import hero from '/src/assets/hero.png';
 
@@ -71,6 +72,10 @@ export default function App() {
           <Partnership />
         </div>
       </section>
+
+      <Section id="project" bg="bg-blue-50">
+        <Projects />
+      </Section>
 
       {/* Contact */}
       <Section id="contact" bg="bg-white">
