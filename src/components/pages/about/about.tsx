@@ -1,12 +1,8 @@
 import HeroImg from '@/assets/about-hero.png';
 
-/**
- * About section – stacks on mobile, splits 50/50 on ≥ md screens.
- */
 export default function About() {
   return (
     <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
-      {/* Left column */}
       <div className="flex flex-col items-start">
         <span className="mb-2 text-sm font-medium uppercase tracking-wide text-brand-blue/80">About&nbsp;Us</span>
 
@@ -14,23 +10,23 @@ export default function About() {
           Empowering all large and small businesses.
         </h2>
 
-        {/* Illustration */}
         <div className="relative mt-8 w-full overflow-hidden rounded-lg bg-gray-50 md:mt-12">
           <img src={HeroImg} alt="About hero" className="h-64 w-full object-contain sm:h-80 md:h-[28rem]" />
         </div>
       </div>
 
-      {/* Right column */}
       <div className="flex flex-col">
         <blockquote className="mb-10 border-l-4 border-primary pl-6 text-lg leading-8 text-gray-700 md:mb-12 md:text-xl md:leading-9">
           Pristine Minds Nepal Pvt. Ltd. (PMN) offers dynamic IT solutions, leveraging global expertise and local
-          insights as an extension of Pristine Minds USA.
+          insights.
         </blockquote>
 
         <div className="mb-8 space-y-4">
           <h3 className="text-2xl font-bold">Our Mission</h3>
           <p className="text-lg leading-8 text-gray-700">
-            Our mission is to discover talent, provide training, and deliver custom software for global success.
+            To empower organizations and communities worldwide by delivering innovative technology solutions, expert
+            consulting, and hands-on training that foster sustainable growth, digital inclusion, and positive social
+            impact.{' '}
           </p>
         </div>
 
