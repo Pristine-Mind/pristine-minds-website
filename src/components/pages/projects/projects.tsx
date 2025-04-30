@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import reliefops from '/src/assets/reliefops.png';
 import ecocredit from '/src/assets/ecocredit.png';
 import mulyabazzar from '/src/assets/mulyabazzar.png';
-import yatranepal from '/src/assets/yatra.jpeg';
+import yatranepal from '/src/assets/yatra.png';
 
 const logos = [
   { src: reliefops, alt: 'Relief Ops' },
